@@ -20,12 +20,9 @@ app.get('/hello',(req,res)=>{
     res.status(200).json({message:"hello"})
 })
 app.get('/val',validator,(req,res)=>{
-res.status(200).json({message:"val is working"})
+res.status(200).json({name:req.query.name})
 })
 
-app.post('val/orange',validator,(req,res)=>{
-    res.status(200).json({message:"val is working with orange"})
-})
 app.use(errorHandler)
 app.use("*",notFoundHandler)
 
